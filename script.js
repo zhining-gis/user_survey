@@ -1,4 +1,5 @@
 const DATA_URL = "data.json";
+const IMAGE_URL = "https://storage.googleapis.com/sd_images123/"
 
 let allIDs = [];
 let dataMap = {};
@@ -43,21 +44,20 @@ function renderCurrent() {
     const div = document.createElement("div");
     div.className = "image-item";
     if (idx == 0) {
-      const encodedName = encodeURIComponent(filename);
       div.innerHTML = `
-          <img src="https://storage.googleapis.com/sd_images123/SD3_orignal/A%20photo%20of%20five%20airplanes-763552.png" alt="Class ${idx + 1}" >
+          <img src="${IMAGE_URL}class1/${filename}" alt="Class ${idx + 1}" >
           <div>Class ${idx + 1}</div>
         `;
     } else if (idx == 1) {
       div.innerHTML = `   
-          <img src="./images/SD3_prompt_eng/${filename}" alt="Class ${
+          <img src="${IMAGE_URL}class2/${filename}" alt="Class ${
         idx + 1
       }" >
           <div>Class ${idx + 1}</div>
         `;
     } else if (idx == 2) {
       div.innerHTML = `
-          <img src="./images/SD3_selfcross_woINITNO/${filename}" alt="Class ${
+          <img src="${IMAGE_URL}class3/${filename}" alt="Class ${
         idx + 1
       }" >
           <div>Class ${idx + 1}</div>

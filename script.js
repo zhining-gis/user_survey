@@ -45,22 +45,22 @@ function renderCurrent() {
     div.className = "image-item";
     if (idx == 0) {
       div.innerHTML = `
-          <img src="${IMAGE_URL}class1/${filename}" alt="Class ${idx + 1}" >
-          <div>Class ${idx + 1}</div>
+          <img src="${IMAGE_URL}class1/${filename}" alt="Image ${idx + 1}" >
+          <div><strong>Image ${idx + 1}</strong>: ${filename.split("-")[0]}</div>
         `;
     } else if (idx == 1) {
       div.innerHTML = `   
-          <img src="${IMAGE_URL}class2/${filename}" alt="Class ${
+          <img src="${IMAGE_URL}class2/${filename}" alt="Image ${
         idx + 1
       }" >
-          <div>Class ${idx + 1}</div>
+          <div><strong>Image ${idx + 1}</strong>: ${filename.split("-")[0]}</div>
         `;
     } else if (idx == 2) {
       div.innerHTML = `
-          <img src="${IMAGE_URL}class3/${filename}" alt="Class ${
+          <img src="${IMAGE_URL}class3/${filename}" alt="Image ${
         idx + 1
       }" >
-          <div>Class ${idx + 1}</div>
+          <div><strong>Image ${idx + 1}</strong>: ${filename.split("-")[0]}</div>
         `;
     }
     container.appendChild(div);
@@ -82,8 +82,9 @@ document.addEventListener("change", function (e) {
     const q4 = document.querySelector('input[name="q4"]:checked');
     const q5 = document.querySelector('input[name="q5"]:checked');
     const q6 = document.querySelector('input[name="q6"]:checked');
+    const q7 = document.querySelector('input[name="q7"]:checked');
     // enable submission button when both q1 and q2 are answered.
-    document.getElementById("nextBtn").disabled = !(q1 && q2 && q3 && q4 && q5 && q6);
+    document.getElementById("nextBtn").disabled = !(q1 && q2 && q3 && q4 && q5 && q6 && q7);
   }
 });
 
@@ -99,6 +100,7 @@ document
     const q4 = document.querySelector('input[name="q4"]:checked').value;
     const q5 = document.querySelector('input[name="q5"]:checked').value;
     const q6 = document.querySelector('input[name="q6"]:checked').value;
+    const q7 = document.querySelector('input[name="q7"]:checked').value;
 
     const username = document.getElementById("username").value.trim() || "anonymous";
 
@@ -123,7 +125,8 @@ document
         question3: q3,
         question4: q4, 
         question5: q5,
-        question6: q6, 
+        question6: q6,
+        question7: q7 
       }),
     })
       .then(() => {

@@ -44,8 +44,9 @@ function renderCurrent() {
     const div = document.createElement("div");
     div.className = "image-item";
     if (idx == 0) {
+      const encodedName = encodeURIComponent(filename);
       div.innerHTML = `
-          <img src="${BASE_PATH}images/SD3_original/${filename}" alt="Class ${idx + 1}" >
+          <img src="images/SD3_original/${encodedName}" alt="Class ${idx + 1}" >
           <div>Class ${idx + 1}</div>
         `;
     } else if (idx == 1) {

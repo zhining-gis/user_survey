@@ -17,6 +17,7 @@ body {
 #image-prompt{
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
 }
 .image-row {
   display: flex;

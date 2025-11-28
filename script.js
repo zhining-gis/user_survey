@@ -1,3 +1,4 @@
+const BASE_PATH = "https://zhining-gis.github.io/user_survey/"
 const DATA_URL = "data.json";
 
 let allIDs = [];
@@ -44,7 +45,7 @@ function renderCurrent() {
     div.className = "image-item";
     if (idx == 0) {
       div.innerHTML = `
-          <img src="/images/SD3_original/${filename}" alt="Class ${idx + 1}" >
+          <img src="${BASE_PATH}images/SD3_original/${filename}" alt="Class ${idx + 1}" >
           <div>Class ${idx + 1}</div>
         `;
     } else if (idx == 1) {

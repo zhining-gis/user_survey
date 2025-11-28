@@ -38,13 +38,11 @@ function renderCurrent() {
 
   const files = dataMap[id];
   const image_prompt = document.getElementById("image-prompt");
-  image_prompt.innerHTML = `${files[0].split("-")[0]}`;
+  image_prompt.innerHTML = `Image Description: ${files[0].split("-")[0]}`;
   
   const container = document.getElementById("image-container");
   container.innerHTML = "";
 
-
-  // container.appendChild();
   // Three images
   files.forEach((filename, idx) => {
     const div = document.createElement("div");

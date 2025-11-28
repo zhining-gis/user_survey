@@ -37,8 +37,14 @@ function renderCurrent() {
   document.getElementById("current-id").textContent = id;
 
   const files = dataMap[id];
+  const image_prompt = document.getElementById("image-prompt");
+  image_prompt.innerHTML = `${files[0].split("-")[0]}`;
+  
   const container = document.getElementById("image-container");
   container.innerHTML = "";
+
+
+  // container.appendChild();
   // Three images
   files.forEach((filename, idx) => {
     const div = document.createElement("div");
@@ -46,21 +52,21 @@ function renderCurrent() {
     if (idx == 0) {
       div.innerHTML = `
           <img src="${IMAGE_URL}class1/${filename}" alt="Image ${idx + 1}" >
-          <div><strong>Image ${idx + 1}</strong>: ${filename.split("-")[0]}</div>
+          <div><strong>Image ${idx + 1}</strong></div>
         `;
     } else if (idx == 1) {
       div.innerHTML = `   
           <img src="${IMAGE_URL}class2/${filename}" alt="Image ${
         idx + 1
       }" >
-          <div><strong>Image ${idx + 1}</strong>: ${filename.split("-")[0]}</div>
+          <div><strong>Image ${idx + 1}</strong></div>
         `;
     } else if (idx == 2) {
       div.innerHTML = `
           <img src="${IMAGE_URL}class3/${filename}" alt="Image ${
         idx + 1
       }" >
-          <div><strong>Image ${idx + 1}</strong>: ${filename.split("-")[0]}</div>
+          <div><strong>Image ${idx + 1}</strong></div>
         `;
     }
     container.appendChild(div);

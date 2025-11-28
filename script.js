@@ -44,7 +44,7 @@ function renderCurrent() {
     div.className = "image-item";
     if (idx == 0) {
       div.innerHTML = `
-          <img src="./images/SD3_original/${filename}" alt="Class ${idx + 1}" >
+          <img src="/images/SD3_original/${filename}" alt="Class ${idx + 1}" >
           <div>Class ${idx + 1}</div>
         `;
     } else if (idx == 1) {

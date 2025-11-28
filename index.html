@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Study (Demo)</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h1>User Study</h1>
+    <div class="progress">ID: <span id="current-id">-</span> | Progress: <span id="progress">0/10</span></div>
+
+    <div style="margin-bottom: 30px;">
+        <label for="username" style="font-size: 18px; font-weight: bold;">Your name or ID:</label><br><br>
+        <input type="text" id="username" placeholder="e.g., Alice" style="padding: 6px; width: 200px;" />
+    </div>
+
+    <div class="image-row" id="image-container">
+        <!-- Dynamic Loading -->
+    </div>
+
+    <form id="response-form">
+        <div class="question">
+            <p><strong>[Diversity] Question 1</strong>: Are the generated image of <strong>Class 1</strong> have different appearance? (Please ignore differences in size, body proportions and poses.) </p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="true"> Yes</label>
+                <label><input type="radio" name="q1" value="false"> No</label>
+            </div>
+        </div>
+        <div class="question">
+            <p><strong>[Diversity] Question 2</strong>: Are the generated image of <strong>Class 2</strong> have different appearance? (Please ignore differences in size, body proportions and poses.) </p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="true"> Yes</label>
+                <label><input type="radio" name="q2" value="false"> No</label>
+            </div>
+        </div>
+        <div class="question">
+            <p><strong>[Diversity] Question 3</strong>: Are the generated image of <strong>Class 3</strong> have different appearance? (Please ignore differences in size, body proportions and poses.) </p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="true"> Yes</label>
+                <label><input type="radio" name="q3" value="false"> No</label>
+            </div>
+        </div>
+        <div class="question">
+            <p><strong>[Recognizability] Question 4</strong>: Are the generated image of <strong>Class 1</strong> recognizable and regular (without artifacts) in terms of its shape and semantic structure? For example, answer <strong>Yes</strong> if a two-leg animal has three or more legs, or a two-eye animal has four eyes, or a two-ear animal has one or three ears. Ignore style, object size in comparison to its surroundings (the following questions are the same).</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="true"> Yes</label>
+                <label><input type="radio" name="q4" value="false"> No</label>
+            </div>
+        </div>
+        <div class="question">
+            <p><strong>[Recognizability] Question 5</strong>: Are the generated image of <strong>Class 2</strong> recognizable and regular (without artifacts) in terms of its shape and semantic structure? </p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="true"> Yes</label>
+                <label><input type="radio" name="q5" value="false"> No</label>
+            </div>
+        </div>
+        <div class="question">
+            <p><strong>[Recognizability] Question 6</strong>: Are the generated image of <strong>Class 3</strong> recognizable and regular (without artifacts) in terms of its shape and semantic structure? </p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="true"> Yes</label>
+                <label><input type="radio" name="q6" value="false"> No</label>
+            </div>
+        </div>
+        <div id="status-message" style="margin-top: 15px; margin-bottom: 15px; min-height: 24px; color: #4CAF50; font-weight: bold;"></div>
+        <button type="submit" id="nextBtn" disabled>Submit & Next Group</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

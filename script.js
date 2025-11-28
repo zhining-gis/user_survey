@@ -1,4 +1,3 @@
-const BASE_PATH = "https://zhining-gis.github.io/user_survey/"
 const DATA_URL = "data.json";
 
 let allIDs = [];
@@ -46,7 +45,7 @@ function renderCurrent() {
     if (idx == 0) {
       const encodedName = encodeURIComponent(filename);
       div.innerHTML = `
-          <img src="https://github.com/zhining-gis/user_survey/blob/main/images/SD3_original/A%20photo%20of%20two%20donuts%20on%20the%20grass-10176.png" alt="Class ${idx + 1}" >
+          <img src="https://storage.googleapis.com/sd_images123/SD3_orignal/A%20photo%20of%20five%20airplanes-763552.png" alt="Class ${idx + 1}" >
           <div>Class ${idx + 1}</div>
         `;
     } else if (idx == 1) {

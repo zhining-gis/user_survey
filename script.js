@@ -33,6 +33,7 @@ function updateProgress() {
 }
 
 function renderCurrent() {
+  document.getElementById('response-form').reset();
   const id = allIDs[currentIndex];
   document.getElementById("current-id").textContent = id;
 
@@ -86,7 +87,7 @@ document.addEventListener("change", function (e) {
     const q4 = document.querySelector('input[name="q4"]:checked');
     const q5 = document.querySelector('input[name="q5"]:checked');
     const q6 = document.querySelector('input[name="q6"]:checked');
-    const q7 = document.querySelector('input[name="q7"]:checked');
+    const q7 = document.querySelectorAll('input[name="q7"]:checked');
     // enable submission button when both q1 and q2 are answered.
     document.getElementById("nextBtn").disabled = !(q1 && q2 && q3 && q4 && q5 && q6 && q7);
   }
@@ -104,7 +105,8 @@ document
     const q4 = document.querySelector('input[name="q4"]:checked').value;
     const q5 = document.querySelector('input[name="q5"]:checked').value;
     const q6 = document.querySelector('input[name="q6"]:checked').value;
-    const q7 = document.querySelector('input[name="q7"]:checked').value;
+    const q7 = document.querySelectorAll('input[name="q7"]:checked');
+    const answer7 = Array.from(q7).map(e => e.value);
 
     const username = document.getElementById("username").value.trim() || "anonymous";
 
@@ -130,7 +132,7 @@ document
         question4: q4, 
         question5: q5,
         question6: q6,
-        question7: q7 
+        question7: answer7.join(",") 
       }),
     })
       .then(() => {
